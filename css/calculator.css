@@ -40,14 +40,14 @@ html {
 }
 #calculator label {
   white-space: nowrap;
-  font-size: 32px;
+  font-size: 24px;
 }
 #calculator input[type=text],
 #calculator input[type=submit] {
   background: #ffffcc;
   border: 1px solid gray;
   border-radius: 5px;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 2;
   margin: 0;
   padding: 5px 15px;
@@ -62,7 +62,7 @@ html {
   border: 1px solid gray;
   color: white;
   border-radius: 5px;
-  font-size: 32px;
+  font-size: 24px;
   line-height: 2;
   margin: 0;
   padding: 5px 15px;
