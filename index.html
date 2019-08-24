@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.  "/>
+	<title> Airgun Calculator </title>
+	<link rel='stylesheet' id='wp-block-library-css' href='css/calculator.css' type='text/css' media='all' />
+</head>
+<body>
+	<form  onsubmit="return false">
+	<main id="calculator">
+		<h1>Airgun FPE Calculator</h1>
+		<p>To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.</p>
+		<dl>
+			<dt>Airgun FPE Calculator</dt>
+			<dd>
+				<label> Velocity:</label> 
+				<input type="text" id="fps" name="fps" placeholder="fps" value="" onclick="this.value = ''" />
+			</dd>
+			<dd>
+				<label>Weight:</label> 
+				<input type="text" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
+			</dd>
+			<dd> 
+				<input type="submit" id="calculateMe" value="Calculate" onclick="javascript:fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100" />
+			</dd>
+			<dd>
+				<label>FPE:</label> 
+				<input type="text" value="" id="fpe" name="fpe" />
+			</dd>
+		</dl>
+	</main>
+	</form>
+	<script>
+		var fps = document.getElementById('fps');
+		var grains = document.getElementById('grains');
+		var fpe = document.getElementById('fpe');
+		var calculateMe = document.getElementById('calculateMe');
+		
+		
+		// on page load focus on fps so cursor is there
+		function focusOnMe() {
+			fps.focus();
+		}
+		window.onload = focusOnMe;
+	</script>
+
+</body>
+</html>
