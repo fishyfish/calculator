@@ -10,26 +10,27 @@
 <body>
 	<form  onsubmit="return false">
 	<main id="calculator">
-		<h1>Airgun FPE Calculator</h1>
-		<p>To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.</p>
 		<dl>
 			<dt>Airgun FPE Calculator</dt>
 			<dd>
-				<label> Velocity:</label> 
+				<label for="fps"> Velocity:</label> 
 				<input type="text" id="fps" name="fps" placeholder="fps" value="" onclick="this.value = ''" />
 			</dd>
 			<dd>
-				<label>Weight:</label> 
+				<label for="grains">Weight:</label> 
 				<input type="text" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
 			</dd>
 			<dd> 
 				<input type="submit" id="calculateMe" value="Calculate" onclick="javascript:fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100" />
 			</dd>
 			<dd>
-				<label>FPE:</label> 
+				<label for="fpe">Calculated Muzzle Energy in FPE:</label> 
 				<input type="text" value="" id="fpe" name="fpe" />
 			</dd>
 		</dl>
+		<h1>Airgun FPE Calculator</h1>
+		<p>To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.</p>
+		
 	</main>
 	</form>
 	<script>

@@ -6,7 +6,7 @@ html {
 }
 #calculator {
   margin: 0 auto;
-  width: 600px;
+  max-width: 600px;
 }
 #calculator * {
   box-sizing: border-box;
@@ -24,7 +24,7 @@ html {
   border-radius: 12px;
   -webkit-box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
-  width: 600px;
+  max-width: 600px;
   margin: 25px;
   padding: 25px;
   list-style: none;
