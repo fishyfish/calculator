@@ -59,11 +59,20 @@
 		var grains = document.getElementById('grains');
 		var fpe = document.getElementById('fpe');
 		var calculateMe = document.getElementById('calculateMe');
+		
+		// fps.onblur = function(){
+//    		 	fps.value = fps.value + ' feet per second';
+// 		};
+// 		
+// 		grains.onblur = function(){
+//    		 	grains.value = grains.value + ' grains';
+// 		};
+		
 		 
-		calculateMe.onclick = function(){
+		calculateMe.onmouseup = function(){
 			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
 			fps.value = fps.value + " feet per second";
-			grains.value = grains.value + " grains";
+ 			grains.value = grains.value + " grains";
 		}, false;
 	
 		// flip submit button color on keydown / keyup for keyboard users. 
@@ -87,6 +96,7 @@
 		window.onload = focusOnMe;
 		
 		// some basic form verification 
+		
 		
 		
 	</script>
