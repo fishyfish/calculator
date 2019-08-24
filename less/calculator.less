@@ -1,6 +1,7 @@
 // Airgun Muzzle Energy Calculator 
 
 body, html {
+	background-color: #333;
 	font-family: helvetica, arial, sans-serif;
 	margin: 0;
 	padding:0; 
@@ -15,8 +16,12 @@ body, html {
 		box-sizing: border-box;
 	}
 	
-	h1, p {
+	h1,h2, p {
 		padding: 0 25px;
+	}
+	
+	h1 {
+		font-size: 2rem;
 	}
 	
 	ol,
@@ -25,77 +30,103 @@ body, html {
 		padding: 0;
 	}
 
-	dl {
+	dl#widget {
+		background-color: white;
 		border-radius: 12px;
 		box-shadow: 0 0 20px 5px rgba(0,0,0,.3);
 		max-width:600px;
 		margin: 25px;
-		padding: 25px;
+		padding:0;
 		list-style: none;
-	}
 	
-	dt {
-		font-size: 24px;
-		margin: 0 0 15px;
-		padding: 5px 0;
-	}
+	
+		dt {
+			background-color: lightgray;
+			border-top-left-radius: 12px;
+			border-top-right-radius: 12px;
+			font-size: 2.0rem;
+			font-weight: bold;
+			margin: 0 0 15px;
+			padding: 25px;
+		}
 
-	dd {
-		margin: 0 0 15px;
-		padding: 5px 0;
+		dd {
+			margin: 0 25px 15px;
+			padding: 5px 0;
 		
-		&.submit-row {
-			border-bottom: 1px solid gray;
+			&.submit-row {
+				//border-bottom: 1px solid gray;
+			}
+		}
+		
+		dd:last-child {
+			background-color: lightgray;
+			border-bottom-left-radius: 12px;
+			border-bottom-right-radius: 12px;
+			font-size: 2.0rem;
+			margin: 0 0 15px;
+			padding: 10px 25px 25px;
+		}
+		
+		label {
+			line-height: 1.5;
 		}
 	}
-
+	
 	label {
 		white-space: nowrap;
-		font-size: 24px;
+		font-size: 1.6rem;
 	}
 
-	input[type=text],
-	input[type=submit] {
-		background: #ffffcc;
+	input[type=text] {
+		background-color: #ffffcc;
 		border: 1px solid gray;
 		border-radius: 5px;
-		font-size: 24px;
+		font-size: 1.6rem;
 		line-height: 2;
 		margin: 0;
 		padding: 5px 15px;
 		width: 100%;
 		min-height: 50px;
 	}
+	
 	input[type=text]#fpe {
-		background: palegreen;
+		background-color: palegreen;
 	}
 
-	input[type=submit] {
-		background: red;
+	button#calculateMe{
+		background-color: red;
 		border: 1px solid gray;
 		color: white;
 		border-radius: 5px;
-		font-size: 24px;
+		font-size: 1.6rem;
 		font-weight: bold;
 		line-height: 2;
-		margin: 0;
+		margin: 0 0 20px 0;
 		padding: 5px 15px;
 		text-transform: uppercase;
 		width: 100%;
+		
+		&:active,
+		&.active {
+			background-color: darkred;
+			transition: opacity .5s ease-out;
+		}
 	}
 	
 	#definitions {
 		border-radius: none;
+		color: white;
 		-webkit-box-shadow:none;
 		box-shadow: none;
 		max-width:600px;
-		margin: 25px;
-		padding: 25px;
+		margin: 0 25px;
+		padding: 0;
 		list-style: ;
 	
 	
 		dt {
-			font-size: 24px;
+			font-size: 1.6rem;
 			margin: 0 0 5px;
 			padding: 5px 0;
 		}
@@ -104,5 +135,9 @@ body, html {
 			margin: 0 0 5px;
 			padding: 5px 0;
 		}
+	}
+	
+	section#content {
+		color: white;
 	}
 }

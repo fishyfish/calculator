@@ -8,57 +8,87 @@
 	<link rel='stylesheet' href='css/calculator.css' type='text/css' media='all' />
 </head>
 <body>
-	<form  onsubmit="return false">
 	<main id="calculator">
-		<dl>
-			<dt>Airgun FPE Calculator</dt>
-			<dd>
-				<label for="fps"> Velocity:</label> 
-				<input type="text" id="fps" name="fps" placeholder="fps" value="" onclick="this.value = ''" />
-			</dd>
-			<dd>
-				<label for="grains">Weight:</label> 
-				<input type="text" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
-			</dd>
-			<dd class="submit-row"> 
-				<input type="submit" id="calculateMe" value="Calculate" onclick="javascript:fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100" />
-			</dd>
-			<dd>
-				<label for="fpe">FPE:</label> 
-				<input type="text" value="" placeholder="Calculated Muzzle Energy" id="fpe" name="fpe" />
-			</dd>
-		</dl>
-		<h1>Airgun FPE Calculator</h1>
-		<p>To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.</p>
-		<dl id="definitions">
-			<dt>Airgun Calculation Definitions and Abbreviations</dt>
-				<dd></dd>
-			<dt>FPS</dt>
-				<dd>FPS is an abbreviation for the measurement of Feet Per Second measurement.</dd>
-			<dt>Airgun Projectile Weight</dt>
-				<dd>In the US, pellets, bbs and bullets for airguns and firearms are typically measured in Grains.</dd>
-			<dt>FPE</dt>
-				<dd>FPE is an abbreviation of Foot Pounds of Energy. It gives a relative measurement of power derived from the FPS and weight of the projectile.. </dd>
-			<dt></dt>
-				<dd></dd>
-			<dt></dt>
-				<dd></dd>
-			<dt></dt>
-				<dd></dd>
+		<section id="calculate">
+			<form  onsubmit="return false">
+				<dl id="widget">
+					<dt>Airgun Energy Calculator</dt>
+					<dd>
+						<label for="fps"> Velocity:</label> 
+						<input type="text" id="fps" name="fps" placeholder="fps" value="" onclick="this.value = ''" />
+					</dd>
+					<dd>
+						<label for="grains">Weight:</label> 
+						<input type="text" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
+					</dd>
+					<dd class="submit-row"> 
+						<button type="submit" class="" id="calculateMe">Calculate</button>
+					</dd>
+					<dd>
+						<label for="fpe">Muzzle Energy:</label> 
+						<input type="text" value="" placeholder="fpe" id="fpe" name="fpe" />
+					</dd>
+				</dl>
+			</form>
+		</section>
+		<section id="content">
+			<h1>Airgun Energy Calculator</h1>
+			<p>This Airgun Energy Calculator is a simple widget designed to take the velocity of a projectile (bb, pellet, dart or bullet), its weight in grains, and calculate the foot pounds of energy (fpe) at the muzzle. This is a useful measurement in that you can use it to compare power settings of an airgun, the energy difference of swapping out a lighter or heavier projectile, or changes in velocity.  </p>
+			<h2>How to measure an airgun velocity</h2>
+			<p>To measure an airgun velocity you'll need to borrow or purchase a Chronograph. Most Chronographs have two sensors you shoot over so that the Chronograph can measure the elapsed time a projectile takes to pass over the first sensor and then the second sensor. </p>
+			<p>To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.</p>
+			<h2>Airgun Calculation Definitions</h2>
+			<dl id="definitions">
+				<dt>FPS</dt>
+					<dd>FPS is an abbreviation for the measurement of Feet Per Second measurement.</dd>
+				<dt>Airgun Projectile Weight</dt>
+					<dd>In the US, pellets, bbs and bullets for airguns and firearms are typically measured in Grains.</dd>
+				<dt>FPE</dt>
+					<dd>FPE is an abbreviation of Foot Pounds of Energy. It gives a relative measurement of power derived from the FPS and weight of the projectile.. </dd>
+				<dt></dt>
+					<dd></dd>
+				<dt></dt>
+					<dd></dd>
+				<dt></dt>
+					<dd></dd>
+			</dl>
+		</section>
 	</main>
-	</form>
 	<script>
 		var fps = document.getElementById('fps');
 		var grains = document.getElementById('grains');
 		var fpe = document.getElementById('fpe');
 		var calculateMe = document.getElementById('calculateMe');
-		
-		
-		// on page load focus on fps so cursor is there
+		 
+		calculateMe.onclick = function(){
+			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
+			fps.value = fps.value + " feet per second";
+			grains.value = grains.value + " grains";
+		}, false;
+	
+		// flip submit button color on keydown / keyup for keyboard users. 
+		document.addEventListener('keydown',function(e){
+			if (event.keyCode == 13) {
+				calculateMe.classList.add('active');
+			}
+        });
+        
+        document.addEventListener('keyup',function(e){
+			if (event.keyCode == 13) {
+				calculateMe.classList.remove('active');
+			}
+        });
+	
+		// place cursor in first field on page load
 		function focusOnMe() {
 			fps.focus();
 		}
+		
 		window.onload = focusOnMe;
+		
+		// some basic form verification 
+		
+		
 	</script>
 
 </body>
