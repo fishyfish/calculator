@@ -155,7 +155,10 @@ html {
   #calculator dl#definitions dd {
     font-size: 1rem;
   }
-  #calculator input[type=text],
+  #calculator input[type=numeral] {
+    font-size: 1.2rem;
+    line-height: 1.2;
+  }
   #calculator #resetMe,
   #calculator #calculateMe {
     font-size: 1.5rem;
@@ -164,6 +167,7 @@ html {
   #calculator #resetMe {
     white-space: nowrap;
     min-width: 100px;
+    padding: inherit 10px;
     width: 25%;
   }
 }
