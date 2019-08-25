@@ -62,7 +62,7 @@ html {
   white-space: nowrap;
   font-size: 1.6rem;
 }
-#calculator input[type=text] {
+#calculator input[type=numeral] {
   background-color: #ffffcc;
   border: 1px solid gray;
   border-radius: 5px;
@@ -73,10 +73,10 @@ html {
   width: 100%;
   min-height: 50px;
 }
-#calculator input[type=text]::placeholder {
+#calculator input[type=numeral]::placeholder {
   font-style: italic;
 }
-#calculator input[type=text]#fpe {
+#calculator input[type=numeral]#fpe {
   background-color: palegreen;
 }
 #calculator button#calculateMe {
@@ -98,7 +98,7 @@ html {
   background-color: darkred;
   transition: opacity 0.5s ease-out;
 }
-#calculator button#reset {
+#calculator input[type=reset]#resetMe {
   background-color: white;
   border: 1px solid gray;
   color: black;
@@ -111,10 +111,11 @@ html {
   text-transform: uppercase;
   width: 26%;
 }
-#calculator button#reset:active,
-#calculator button#reset.active,
-#calculator button#reset:hover {
-  background-color: gray;
+#calculator input[type=reset]#resetMe:active,
+#calculator input[type=reset]#resetMe.active,
+#calculator input[type=reset]#resetMe:hover {
+  background-color: #333;
+  color: white;
   transition: opacity 0.5s ease-out;
 }
 #calculator #definitions {

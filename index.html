@@ -10,23 +10,23 @@
 <body>
 	<main id="calculator">
 		<section id="calculate">
-			<form  onsubmit="return false">
+			<form id="fpeform" onsubmit="return false">
 				<dl id="widget">
 					<dt>Airgun Energy Calculator</dt>
 					<dd>
 						<label for="fps"> Velocity:</label> 
-						<input type="text" id="fps" name="fps" placeholder="fps" value="" onclick="this.value = ''" />
+						<input type="numeral" id="fps" name="fps" placeholder="fps" value="" onclick="this.value = ''" />
 					</dd>
 					<dd>
 						<label for="grains">Weight:</label> 
-						<input type="text" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
+						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
 					</dd>
 					<dd class="submit-row"> 
-						<button id="reset" type="button" />Reset</button> <button type="submit" class="" id="calculateMe">Calculate</button>
+						<input id="resetMe" type="reset" value="Reset" /> <button type="submit" class="" id="calculateMe">Calculate</button>
 					</dd>
 					<dd>
 						<label for="fpe">Muzzle Energy:</label> 
-						<input type="text" value="" placeholder="fpe" id="fpe" name="fpe" />
+						<input type="numeral" value="" placeholder="fpe" id="fpe" name="fpe" />
 					</dd>
 				</dl>
 			</form>
@@ -60,6 +60,8 @@
 		var grains = document.getElementById('grains');
 		var fpe = document.getElementById('fpe');
 		var calculateMe = document.getElementById('calculateMe');
+		var fpeform = document.getElementById("fpeform");
+		var resetMe = document.getElementById("resetMe");
 		
 		 // calculate the fpe on form submit
 		document.addEventListener('submit',function(e){
@@ -75,7 +77,7 @@
 			}
         });
         
-        // turn off active class
+        // remove active class
         document.addEventListener('keyup',function(e){
 			if (event.keyCode == 13) {
 				calculateMe.classList.remove('active');
@@ -91,15 +93,21 @@
 		
 		// todo: some basic form verification 
 		
-		// disable the caculate button after submitting to prevent multiple calculations.
+		// disable the calculate button after submitting to prevent multiple calculations.
 		 var form = document.querySelector('form');
 			form.addEventListener('submit', function() {
-				var buttons = this.querySelectorAll('button');
-				buttons.forEach(function(button) {
-					button.setAttribute('disabled', 'disabled');
-				});
+				calculateMe.setAttribute('enabled', 'enabled');
 			}, false);
-		
+			
+			// on form reset enable calculateMe button
+			resetMe.addEventListener('click', function() {
+				var calculateMe = document.getElementById("calculateMe");
+				calculateMe.setAttribute('enabled', 'enabled');
+			}, false);;
+			
+		//
+	
+
 	</script>
 
 </body>
