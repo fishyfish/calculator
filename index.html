@@ -81,7 +81,14 @@
 		}), false;
 	
 		// add active class, to set calculate button color on keydown / keyup for keyboard users. 
+		// janky for mobile - fixme
 		document.addEventListener('keydown',function(e){
+			if (event.keyCode == 13) {
+				calculateMe.classList.add('active');
+			}
+        });
+        
+        document.addEventListener('touchstart',function(e){
 			if (event.keyCode == 13) {
 				calculateMe.classList.add('active');
 			}
@@ -89,6 +96,13 @@
         
         // remove active class
         document.addEventListener('keyup',function(e){
+			if (event.keyCode == 13) {
+				calculateMe.classList.remove('active');
+			}
+        });
+        
+         // remove active class
+        document.addEventListener('touchend',function(e){
 			if (event.keyCode == 13) {
 				calculateMe.classList.remove('active');
 			}
