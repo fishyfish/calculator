@@ -22,7 +22,7 @@
 						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" />
 					</dd>
 					<dd class="submit-row"> 
-						<input id="resetMe" type="reset" value="Reset" /> <button type="submit" class="" id="calculateMe">Calculate</button>
+						<input id="resetMe" type="button" value="Reset" /> <button type="submit" class="" id="calculateMe">Calculate</button>
 					</dd>
 					<dd>
 						<label for="fpe">Muzzle Energy:</label> 
@@ -71,6 +71,7 @@
 		grains.addEventListener('click', function() {
 			this.value = '';
 		});
+	
 		
 		 // calculate the fpe on form submit
 		document.addEventListener('submit',function(e){
@@ -111,6 +112,7 @@
 			// on form reset enable calculateMe button
 			resetMe.addEventListener('click', function() {
 				var calculateMe = document.getElementById("calculateMe");
+				fpeform.reset();
 				calculateMe.setAttribute('enabled', 'enabled');
 			}, false);;
 			

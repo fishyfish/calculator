@@ -98,7 +98,7 @@ html {
   background-color: darkred;
   transition: opacity 0.5s ease-out;
 }
-#calculator input[type=reset]#resetMe {
+#calculator input[type=button]#resetMe {
   background-color: white;
   border: 1px solid gray;
   color: black;
@@ -111,9 +111,9 @@ html {
   text-transform: uppercase;
   width: 26%;
 }
-#calculator input[type=reset]#resetMe:active,
-#calculator input[type=reset]#resetMe.active,
-#calculator input[type=reset]#resetMe:hover {
+#calculator input[type=button]#resetMe:active,
+#calculator input[type=button]#resetMe.active,
+#calculator input[type=button]#resetMe:hover {
   background-color: #333;
   color: white;
   transition: opacity 0.5s ease-out;
@@ -155,12 +155,12 @@ html {
     font-size: 1.5rem;
   }
   #calculator input[type=text],
-  #calculator input[type=reset]#resetMe,
+  #calculator input[type=button]#resetMe,
   #calculator button#calculateMe {
     font-size: 1.5rem;
     line-height: 1.5;
   }
-  #calculator input[type=reset]#resetMe {
+  #calculator input[type=button]#resetMe {
     width: 25%;
   }
 }
