@@ -76,10 +76,10 @@ html {
 #calculator input[type=numeral]::placeholder {
   font-style: italic;
 }
-#calculator input[type=numeral]#fpe {
+#calculator #fpe {
   background-color: palegreen;
 }
-#calculator button#calculateMe {
+#calculator #calculateMe {
   background-color: red;
   border: 1px solid gray;
   color: white;
@@ -92,13 +92,13 @@ html {
   text-transform: uppercase;
   width: 70%;
 }
-#calculator button#calculateMe:active,
-#calculator button#calculateMe.active,
-#calculator button#calculateMe:hover {
+#calculator #calculateMe:active,
+#calculator #calculateMe.active,
+#calculator #calculateMe:hover {
   background-color: darkred;
   transition: opacity 0.5s ease-out;
 }
-#calculator input[type=button]#resetMe {
+#calculator #resetMe {
   background-color: white;
   border: 1px solid gray;
   color: black;
@@ -111,9 +111,9 @@ html {
   text-transform: uppercase;
   width: 26%;
 }
-#calculator input[type=button]#resetMe:active,
-#calculator input[type=button]#resetMe.active,
-#calculator input[type=button]#resetMe:hover {
+#calculator #resetMe:active,
+#calculator #resetMe.active,
+#calculator #resetMe:hover {
   background-color: #333;
   color: white;
   transition: opacity 0.5s ease-out;
@@ -156,13 +156,12 @@ html {
     font-size: 1rem;
   }
   #calculator input[type=text],
-  #calculator input[type=button]#resetMe,
-  #calculator button#calculateMe {
+  #calculator #resetMe,
+  #calculator #calculateMe {
     font-size: 1.5rem;
     line-height: 1.5;
   }
-  #calculator input[type=button]#resetMe {
-    background: lime;
+  #calculator #resetMe {
     width: 25%;
   }
 }
