@@ -98,7 +98,7 @@ body, html {
 		background-color: palegreen;
 	}
 
-	button#calculateMe{
+	button#calculateMe {
 		background-color: red;
 		border: 1px solid gray;
 		color: white;
@@ -109,11 +109,35 @@ body, html {
 		margin: 0 0 20px 0;
 		padding: 5px 15px;
 		text-transform: uppercase;
-		width: 100%;
+		width: 70%;
 		
 		&:active,
-		&.active {
+		&.active,
+		&:hover {
 			background-color: darkred;
+			transition: opacity .5s ease-out;
+		}
+		
+	}
+	
+	button#reset {
+		background-color: white;
+		border: 1px solid gray;
+		color: black;
+		border-radius: 5px;
+		float:left;
+		font-size: 1.6rem;
+		//font-weight: bold;
+		line-height: 2;
+		margin: 0 20px 20px 0;
+		padding: 5px 15px;
+		text-transform: uppercase;
+		width: 26%;
+		
+		&:active,
+		&.active,
+		&:hover {
+			background-color: gray;
 			transition: opacity .5s ease-out;
 		}
 	}
@@ -146,7 +170,7 @@ body, html {
 	}
 }
 
-
+// help mobile and small screen users
 @media screen and (max-width:634px) {
 	#calculator {
 		dl#widget {
@@ -170,6 +194,10 @@ body, html {
 		button {
 			font-size: 1.2rem;
 			line-height: 1.2;
+		}
+		
+		button#reset {
+			width: 25%;
 		}
 	}
 }

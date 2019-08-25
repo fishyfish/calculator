@@ -22,7 +22,7 @@
 						<input type="text" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
 					</dd>
 					<dd class="submit-row"> 
-						<button type="submit" class="" id="calculateMe">Calculate</button>
+						<button id="reset" type="button" />Reset</button> <button type="submit" class="" id="calculateMe">Calculate</button>
 					</dd>
 					<dd>
 						<label for="fpe">Muzzle Energy:</label> 
@@ -55,6 +55,7 @@
 		</section>
 	</main>
 	<script>
+		//variables
 		var fps = document.getElementById('fps');
 		var grains = document.getElementById('grains');
 		var fpe = document.getElementById('fpe');
@@ -67,13 +68,14 @@
  			grains.value = grains.value + " grains";
 		}), false;
 	
-		// flip submit button color on keydown / keyup for keyboard users. 
+		// add active class, to set calculate button color on keydown / keyup for keyboard users. 
 		document.addEventListener('keydown',function(e){
 			if (event.keyCode == 13) {
 				calculateMe.classList.add('active');
 			}
         });
         
+        // turn off active class
         document.addEventListener('keyup',function(e){
 			if (event.keyCode == 13) {
 				calculateMe.classList.remove('active');
@@ -87,7 +89,7 @@
 		
 		window.onload = focusOnMe;
 		
-		// some basic form verification 
+		// todo: some basic form verification 
 		
 		// disable the caculate button after submitting to prevent multiple calculations.
 		 var form = document.querySelector('form');

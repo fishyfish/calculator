@@ -90,11 +90,31 @@ html {
   margin: 0 0 20px 0;
   padding: 5px 15px;
   text-transform: uppercase;
-  width: 100%;
+  width: 70%;
 }
 #calculator button#calculateMe:active,
-#calculator button#calculateMe.active {
+#calculator button#calculateMe.active,
+#calculator button#calculateMe:hover {
   background-color: darkred;
+  transition: opacity 0.5s ease-out;
+}
+#calculator button#reset {
+  background-color: white;
+  border: 1px solid gray;
+  color: black;
+  border-radius: 5px;
+  float: left;
+  font-size: 1.6rem;
+  line-height: 2;
+  margin: 0 20px 20px 0;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  width: 26%;
+}
+#calculator button#reset:active,
+#calculator button#reset.active,
+#calculator button#reset:hover {
+  background-color: gray;
   transition: opacity 0.5s ease-out;
 }
 #calculator #definitions {
@@ -136,5 +156,8 @@ html {
   #calculator button {
     font-size: 1.2rem;
     line-height: 1.2;
+  }
+  #calculator button#reset {
+    width: 25%;
   }
 }
