@@ -60,14 +60,6 @@
 		var fpe = document.getElementById('fpe');
 		var calculateMe = document.getElementById('calculateMe');
 		
-		// fps.onblur = function(){
-//    		 	fps.value = fps.value + ' feet per second';
-// 		};
-// 		
-// 		grains.onblur = function(){
-//    		 	grains.value = grains.value + ' grains';
-// 		};
-		
 		 
 		calculateMe.onmouseup = function(){
 			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
@@ -92,13 +84,18 @@
 		function focusOnMe() {
 			fps.focus();
 		}
-	
 		
 		window.onload = focusOnMe;
 		
 		// some basic form verification 
 		
-		
+		var form = document.querySelector('form');
+			form.addEventListener('submit', function() {
+				var buttons = this.querySelectorAll('button');
+				buttons.forEach(function(button) {
+					button.setAttribute('disabled', 'disabled');
+				});
+			}, false);
 		
 	</script>
 
