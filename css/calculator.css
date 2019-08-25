@@ -118,7 +118,7 @@ html {
   color: white;
   transition: opacity 0.5s ease-out;
 }
-#calculator #definitions {
+#calculator dl#definitions {
   border-radius: none;
   color: white;
   -webkit-box-shadow: none;
@@ -128,12 +128,13 @@ html {
   padding: 0;
   list-style: ;
 }
-#calculator #definitions dt {
+#calculator dl#definitions dt {
   font-size: 1.6rem;
   margin: 0 0 5px;
   padding: 5px 0;
 }
-#calculator #definitions dd {
+#calculator dl#definitions dd {
+  font-size: 1rem;
   margin: 0 0 5px;
   padding: 5px 0;
 }
@@ -151,8 +152,8 @@ html {
   #calculator h1 {
     font-size: 1.5rem;
   }
-  #calculator #definitions {
-    font-size: 1.5rem;
+  #calculator dl#definitions dd {
+    font-size: 1rem;
   }
   #calculator input[type=text],
   #calculator input[type=button]#resetMe,
@@ -161,6 +162,7 @@ html {
     line-height: 1.5;
   }
   #calculator input[type=button]#resetMe {
+    background: lime;
     width: 25%;
   }
 }
