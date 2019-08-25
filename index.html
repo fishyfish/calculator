@@ -60,12 +60,12 @@
 		var fpe = document.getElementById('fpe');
 		var calculateMe = document.getElementById('calculateMe');
 		
-		 
-		calculateMe.onmouseup = function(){
+		 // calculate the fpe on form submit
+		document.addEventListener('submit',function(e){
 			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
 			fps.value = fps.value + " feet per second";
  			grains.value = grains.value + " grains";
-		}, false;
+		}), false;
 	
 		// flip submit button color on keydown / keyup for keyboard users. 
 		document.addEventListener('keydown',function(e){
@@ -89,7 +89,8 @@
 		
 		// some basic form verification 
 		
-		var form = document.querySelector('form');
+		// disable the caculate button after submitting to prevent multiple calculations.
+		 var form = document.querySelector('form');
 			form.addEventListener('submit', function() {
 				var buttons = this.querySelectorAll('button');
 				buttons.forEach(function(button) {
