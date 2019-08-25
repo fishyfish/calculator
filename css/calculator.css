@@ -157,7 +157,11 @@ html {
     font-size: 1.2rem;
     line-height: 1.2;
   }
+  #calculator button#calculateMe {
+    line-height: 1.5;
+  }
   #calculator button#reset {
+    line-height: 1.5;
     width: 25%;
   }
 }
