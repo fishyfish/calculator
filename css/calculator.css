@@ -163,6 +163,7 @@ html {
   }
   #calculator #resetMe {
     white-space: nowrap;
+    min-width: 100px;
     width: 25%;
   }
 }
