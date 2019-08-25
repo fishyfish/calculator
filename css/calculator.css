@@ -162,7 +162,7 @@ html {
     line-height: 1.5;
   }
   #calculator #resetMe {
-    background: pink;
+    white-space: nowrap;
     width: 25%;
   }
 }
