@@ -175,6 +175,7 @@ body, html {
 	#calculator {
 		dl#widget {
 			font-size: 1rem;
+			margin: 10px;
 		
 			dt {
 				font-size: 1.5rem
@@ -191,17 +192,13 @@ body, html {
 
 	
 		input[type=text],
-		button {
-			font-size: 1.2rem;
-			line-height: 1.2;
-		}
-		
-		button#calculateMe {
+		input[type=reset]#resetMe,
+		button#calculateMe  {
+			font-size: 1.5rem;
 			line-height: 1.5;
 		}
 		
-		button#reset {
-			line-height: 1.5;
+		input[type=reset]#resetMe {
 			width: 25%;
 		}
 	}

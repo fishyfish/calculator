@@ -143,6 +143,7 @@ html {
 @media screen and (max-width: 634px) {
   #calculator dl#widget {
     font-size: 1rem;
+    margin: 10px;
   }
   #calculator dl#widget dt {
     font-size: 1.5rem;
@@ -154,15 +155,12 @@ html {
     font-size: 1.5rem;
   }
   #calculator input[type=text],
-  #calculator button {
-    font-size: 1.2rem;
-    line-height: 1.2;
-  }
+  #calculator input[type=reset]#resetMe,
   #calculator button#calculateMe {
+    font-size: 1.5rem;
     line-height: 1.5;
   }
-  #calculator button#reset {
-    line-height: 1.5;
+  #calculator input[type=reset]#resetMe {
     width: 25%;
   }
 }

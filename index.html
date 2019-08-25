@@ -15,18 +15,18 @@
 					<dt>Airgun Energy Calculator</dt>
 					<dd>
 						<label for="fps"> Velocity:</label> 
-						<input type="numeral" id="fps" name="fps" placeholder="fps" value="" onclick="this.value = ''" />
+						<input type="numeral" id="fps" name="fps" placeholder="feet per second" value="" />
 					</dd>
 					<dd>
 						<label for="grains">Weight:</label> 
-						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" onclick="this.value = ''" />
+						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" />
 					</dd>
 					<dd class="submit-row"> 
 						<input id="resetMe" type="reset" value="Reset" /> <button type="submit" class="" id="calculateMe">Calculate</button>
 					</dd>
 					<dd>
 						<label for="fpe">Muzzle Energy:</label> 
-						<input type="numeral" value="" placeholder="fpe" id="fpe" name="fpe" />
+						<input type="numeral" value="" placeholder="foot pounds energy" id="fpe" name="fpe" />
 					</dd>
 				</dl>
 			</form>
@@ -62,6 +62,15 @@
 		var calculateMe = document.getElementById('calculateMe');
 		var fpeform = document.getElementById("fpeform");
 		var resetMe = document.getElementById("resetMe");
+		
+		// clear form fields when clicking in field
+		fps.addEventListener('click', function() {
+			this.value = '';
+		});
+		
+		grains.addEventListener('click', function() {
+			this.value = '';
+		});
 		
 		 // calculate the fpe on form submit
 		document.addEventListener('submit',function(e){
