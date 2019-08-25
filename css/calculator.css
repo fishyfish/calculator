@@ -162,6 +162,7 @@ html {
     line-height: 1.5;
   }
   #calculator #resetMe {
+    background: pink;
     width: 25%;
   }
 }
