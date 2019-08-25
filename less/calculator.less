@@ -30,7 +30,7 @@ body, html {
 		padding: 0;
 	}
 
-	dl#widget {
+	#widget {
 		background-color: white;
 		border-radius: 12px;
 		box-shadow: 0 0 20px 5px rgba(0,0,0,.3);
@@ -174,12 +174,24 @@ body, html {
 // help mobile and small screen users
 @media screen and (max-width:634px) {
 	#calculator {
-		dl#widget {
+		#widget {
 			font-size: 1rem;
 			margin: 10px;
 		
 			dt {
-				font-size: 1.5rem
+				font-size: 1.3rem;
+			}
+			
+			dd {
+				padding: 0px;
+				
+				label {
+					font-size: 1.3rem;
+				}
+			}
+			
+			.submit-row {
+				white-space: nowrap;
 			}
 		}
 	
@@ -196,19 +208,25 @@ body, html {
 	
 		input[type=numeral] {
 			font-size: 1.2rem;
-			line-height: 1.2;
+			line-height: 1.0;
+			min-height: 40px;
+			padding: 0 inherit;
 		}
 		
 		#resetMe,
-		#calculateMe  {
-			font-size: 1.5rem;
-			line-height: 1.5;
+		#calculateMe {
+			font-size: 1.2rem;
+			line-height: 1.2;
+			padding:inherit 0;
+		}
+		
+		#calculateMe {
+			width: 55%;
 		}
 		
 		#resetMe {
-			background: orange;
-			min-width: 100px;
-			padding: inherit 10px;
+			min-width: 90px;
+			padding: inherit 5px;
 			width: 25%;
 		}
 	}

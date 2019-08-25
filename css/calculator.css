@@ -25,7 +25,7 @@ html {
   margin: 0;
   padding: 0;
 }
-#calculator dl#widget {
+#calculator #widget {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
@@ -34,7 +34,7 @@ html {
   padding: 0;
   list-style: none;
 }
-#calculator dl#widget dt {
+#calculator #widget dt {
   background-color: lightgray;
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
@@ -43,11 +43,11 @@ html {
   margin: 0 0 15px;
   padding: 25px;
 }
-#calculator dl#widget dd {
+#calculator #widget dd {
   margin: 0 25px 15px;
   padding: 5px 0;
 }
-#calculator dl#widget dd:last-child {
+#calculator #widget dd:last-child {
   background-color: lightgray;
   border-bottom-left-radius: 12px;
   border-bottom-right-radius: 12px;
@@ -55,7 +55,7 @@ html {
   margin: 0 0 15px;
   padding: 10px 25px 25px;
 }
-#calculator dl#widget label {
+#calculator #widget label {
   line-height: 1.5;
 }
 #calculator label {
@@ -142,12 +142,21 @@ html {
   color: white;
 }
 @media screen and (max-width: 634px) {
-  #calculator dl#widget {
+  #calculator #widget {
     font-size: 1rem;
     margin: 10px;
   }
-  #calculator dl#widget dt {
-    font-size: 1.5rem;
+  #calculator #widget dt {
+    font-size: 1.3rem;
+  }
+  #calculator #widget dd {
+    padding: 0px;
+  }
+  #calculator #widget dd label {
+    font-size: 1.3rem;
+  }
+  #calculator #widget .submit-row {
+    white-space: nowrap;
   }
   #calculator h1 {
     font-size: 1.5rem;
@@ -157,17 +166,22 @@ html {
   }
   #calculator input[type=numeral] {
     font-size: 1.2rem;
-    line-height: 1.2;
+    line-height: 1.0;
+    min-height: 40px;
+    padding: 0 inherit;
   }
   #calculator #resetMe,
   #calculator #calculateMe {
-    font-size: 1.5rem;
-    line-height: 1.5;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: inherit 0;
+  }
+  #calculator #calculateMe {
+    width: 55%;
   }
   #calculator #resetMe {
-    background: orange;
-    min-width: 100px;
-    padding: inherit 10px;
+    min-width: 90px;
+    padding: inherit 5px;
     width: 25%;
   }
 }
