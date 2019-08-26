@@ -15,11 +15,11 @@
 					<dt>Airgun Energy Calculator</dt>
 					<dd>
 						<label for="fps"> Velocity:</label> 
-						<input type="numeral" id="fps" name="fps" placeholder="feet per second" value="" />
+						<input type="numeral" id="fps" name="fps" placeholder="feet per second" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" title="Please input numbers and decimal only" required  />
 					</dd>
 					<dd>
 						<label for="grains">Weight:</label> 
-						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" />
+						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" title="Please input numbers and decimal only" required />
 					</dd>
 					<dd class="submit-row"> 
 						<button id="resetMe" type="button">Reset</button> <button type="submit" id="calculateMe">Calculate</button>
@@ -102,7 +102,6 @@
 		
 		window.onload = focusOnMe;
 		
-		// todo: some basic form verification 
 		
 		// disable the calculate button after submitting to prevent multiple calculations.
 		 var form = document.querySelector('form');
@@ -112,7 +111,6 @@
 			
 			// on form reset enable calculateMe button
 			resetMe.addEventListener('click', function() {
-				var calculateMe = document.getElementById('calculateMe');
 				fpeform.reset();
 				calculateMe.removeAttribute('disabled', 'disabled');
 			}, false);;
