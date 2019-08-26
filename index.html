@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description" content="To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.  "/>
+	<meta name="description" content="This Airgun Energy Calculator is a simple widget designed to take the velocity of a projectile (bb, pellet, dart or bullet), its weight in grains, and calculate the foot pounds of energy (fpe) at the muzzle.  "/>
 	<title> Airgun Calculator </title>
 	<link rel='stylesheet' href='css/calculator.css?08252019' type='text/css' media='all' />
 </head>
@@ -69,7 +69,7 @@
 		});
 	
 		
-		 // calculate the fpe on form submit
+		 // calculate the fpe on form submit either by clicking on submit button or hitting return
 		document.addEventListener('submit',function(e){
 			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
 			fps.value = fps.value + " feet per second";
