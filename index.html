@@ -87,27 +87,14 @@
 				calculateMe.classList.add('active');
 			}
         });
-        
-        document.addEventListener('touchstart',function(e){
-			if (event.keyCode == 13) {
-				calculateMe.classList.add('active');
-			}
-        });
-        
+    
         // remove active class
         document.addEventListener('keyup',function(e){
 			if (event.keyCode == 13) {
 				calculateMe.classList.remove('active');
 			}
         });
-        
-         // remove active class
-        document.addEventListener('touchend',function(e){
-			if (event.keyCode == 13) {
-				calculateMe.classList.remove('active');
-			}
-        });
-	
+
 		// place cursor in first field on page load
 		function focusOnMe() {
 			fps.focus();
@@ -120,14 +107,14 @@
 		// disable the calculate button after submitting to prevent multiple calculations.
 		 var form = document.querySelector('form');
 			form.addEventListener('submit', function() {
-				calculateMe.setAttribute('enabled', 'enabled');
+				calculateMe.setAttribute('disabled', 'disabled');
 			}, false);
 			
 			// on form reset enable calculateMe button
 			resetMe.addEventListener('click', function() {
-				var calculateMe = document.getElementById("calculateMe");
+				var calculateMe = document.getElementById('calculateMe');
 				fpeform.reset();
-				calculateMe.setAttribute('enabled', 'enabled');
+				calculateMe.removeAttribute('disabled', 'disabled');
 			}, false);;
 			
 		//
