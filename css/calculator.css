@@ -7,7 +7,7 @@ html {
 }
 #calculator {
   margin: 0 auto;
-  max-width: 600px;
+  max-width: 780px;
 }
 #calculator * {
   box-sizing: border-box;
@@ -30,7 +30,7 @@ html {
   border-radius: 12px;
   box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.3);
   max-width: 600px;
-  margin: 25px;
+  margin: 25px auto;
   padding: 0;
   list-style: none;
 }
@@ -140,6 +140,7 @@ html {
 }
 #calculator section#content {
   color: white;
+  max-width: 780px;
 }
 @media screen and (max-width: 634px) {
   #calculator #widget {
