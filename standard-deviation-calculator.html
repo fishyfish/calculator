@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="description" content="This Airgun Energy Calculator is a simple widget designed to take the velocity of a projectile (bb, pellet, dart or bullet), its weight in grains, and calculate the foot pounds of energy (fpe) at the muzzle.  "/>
+	<title> Airgun Calculator </title>
+	<link rel='stylesheet' href='css/calculator.css?08252019' type='text/css' media='all' />
+</head>
+<body>
+	<main id="calculator">
+		<section id="calculate">
+			<!--<form id="fpeform" onsubmit="return false">
+				<dl id="widget">
+					<dt>Standard Deviation Calculator</dt>
+					<dd>
+						<label for="fps"> Velocity:</label> 
+						<input type="numeral" id="fps" name="fps" placeholder="feet per second" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" title="Please input numbers and decimal only" required  />
+					</dd>
+					<dd>
+						<label for="grains">Weight:</label> 
+						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" title="Please input numbers and decimal only" required />
+					</dd>
+					<dd class="submit-row"> 
+						<button id="resetMe" type="button">Reset</button> <button type="submit" id="calculateMe">Calculate</button>
+					</dd>
+					<dd>
+						<label for="fpe">Muzzle Energy:</label> 
+						<input type="numeral" value="" placeholder="foot pounds energy" id="fpe" name="fpe" />
+					</dd>
+				</dl>
+			</form>-->
+			<form onsubmit="return false">
+			<!-- <form id="myForm" name="myForm"> -->
+			<dl id="widget">
+			<dt>Standard Deviation Calculator
+				<p>Input a 10 shot FPS number string separated by comma's (ie. 755, 752, 753), then press calculate to determine standard deviation.</p>
+			</dt>
+			
+			
+				<span>
+					Enter FPS String:  
+				</span>
+				<input type="text" id="num" value="" size="42" />
+				<input type="button" value="Calculate" onClick= "CalculateMSD();"></p>
+
+
+				<span>Average</span>
+				<input type="text" id="mean" value=""></input>
+				<span>Standard Deviation </span>
+				<input type="text" id="stddeviation" value=""></input>
+
+				<span>Variance</span>
+				<input type="text" id="variance" value=""></input>
+		</section>
+		<section id="content">
+			<h1>Airgun Energy Calculator</h1>
+			<p>This Airgun Energy Calculator is a simple widget designed to take the velocity of a projectile (bb, pellet, dart or bullet), its weight in grains, and calculate the foot pounds of energy (fpe) at the muzzle. This is a useful measurement in that you can use it to compare power settings of an airgun, the energy difference of swapping out a lighter or heavier projectile, or changes in velocity.  </p>
+			<h2>How to measure an airgun velocity</h2>
+			<p>To measure an airgun velocity you'll need to borrow or purchase a Chronograph. Most Chronographs have two sensors you shoot over so that the Chronograph can measure the elapsed time a projectile takes to pass over the first sensor and then the second sensor. </p>
+			<p>To get the most performance out of an airgun it is important to measure the velocity and weight of the pellet to be able to understand the Foot Pounds of Energy.</p>
+			<h2>Airgun Calculation Definitions</h2>
+			<dl id="definitions">
+				<dt>FPS</dt>
+					<dd>FPS is an abbreviation for the measurement of Feet Per Second measurement.</dd>
+				<dt>Airgun Projectile Weight</dt>
+					<dd>In the US, pellets, bbs and bullets for airguns and firearms are typically measured in Grains.</dd>
+				<dt>FPE</dt>
+					<dd>FPE is an abbreviation of Foot Pounds of Energy. It gives a relative measurement of power derived from the FPS and weight of the projectile.. </dd>
+			</dl>
+			<h2>Fun calculations to try</h2>
+			<p>Find the average speed of a baseball fastball and the weight of the baseball to find the energy the catcher is receiving.</p>
+		</section>
+	</main>
+	
+	<script type="text/javascript">
+		var n = new Array();
+		function CalculateMSD() {
+ 
+			var n = document.getElementById("num").value.split(",");
+
+			for (var i=0;i<n.length;i++)  {
+				if ((n[i] == "") || (isNaN(n[i]))) {
+				alert ("Data Error");
+				}
+
+			}
+
+			var sum = 0;
+			var mean = 0;
+				for (var i = 0; i<n.length;i++) {
+				sum += parseFloat(n[i]);   // must be a number
+			}
+			mean = sum/n.length;
+
+			var variance = 0;
+			for (var i = 0; i<n.length; i++)  {
+				variance += (n[i]-mean)*(n[i]-mean);
+			}
+			variance = variance / (n.length-1)
+
+			var stdDeviation = 0;
+			stdDeviation = Math.sqrt(variance);
+
+
+			document.myForm.mean.value= Math.round(10000*mean)/10000;
+			document.myForm.variance.value= Math.round(10000*variance)/10000;
+			document.myForm.stddeviation.value= Math.round(10000*stdDeviation)/10000;
+		}
+
+</script>
+
+	<!--<script>
+		//variables
+		var fps = document.getElementById('fps');
+		var grains = document.getElementById('grains');
+		var fpe = document.getElementById('fpe');
+		var calculateMe = document.getElementById('calculateMe');
+		var fpeform = document.getElementById("fpeform");
+		var resetMe = document.getElementById("resetMe");
+		
+		// clear form fields when clicking in field
+		fps.addEventListener('click', function() {
+			//fpeform.reset();
+			this.value = '';
+		});
+		
+		grains.addEventListener('click', function() {
+			this.value = '';
+		});
+	
+		
+		 // calculate the fpe on form submit either by clicking on submit button or hitting return
+		document.addEventListener('submit',function(e){
+			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
+			fps.value = fps.value + " feet per second";
+ 			grains.value = grains.value + " grains";
+		}), false;
+	
+		// add active class, to set calculate button color on keydown / keyup for keyboard users. 
+		// janky for mobile - fixme
+		document.addEventListener('keydown',function(e){
+			if (event.keyCode == 13) {
+				calculateMe.classList.add('active');
+			}
+        });
+    
+        // remove active class
+        document.addEventListener('keyup',function(e){
+			if (event.keyCode == 13) {
+				calculateMe.classList.remove('active');
+			}
+        });
+
+		// place cursor in first field on page load
+		function focusOnMe() {
+			fps.focus();
+		}
+		
+		window.onload = focusOnMe;
+		
+		// disable the calculate button after submitting to prevent multiple calculations.
+		 var form = document.querySelector('form');
+			form.addEventListener('submit', function() {
+				calculateMe.setAttribute('disabled', 'disabled');
+			}, false);
+			
+			// on form reset enable calculateMe button
+			resetMe.addEventListener('click', function() {
+				fpeform.reset();
+				calculateMe.removeAttribute('disabled', 'disabled');
+			}, false);
+			
+			
+			// Firefox outlines form element(s) on submit. Fixme
+			// probably due to form fields being numeral but I'm sticking in text. hmmmm. 
+	</script>-->
+	
+</body>
+</html>
