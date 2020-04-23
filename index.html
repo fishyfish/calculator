@@ -14,19 +14,19 @@
 				<dl id="widget">
 					<dt>Airgun Energy Calculator</dt>
 					<dd>
-						<label for="fps"> Velocity:</label> 
-						<input type="numeral" id="fps" name="fps" placeholder="feet per second" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" title="Please input numbers and decimal only" required  />
+						<label for="fps">Velocity:</label> 
+						<input type="numeral" id="fps" name="fps" placeholder="feet per second" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" aria-label="Input the velocity" title="Please input numbers and decimal only" required  />
 					</dd>
 					<dd>
-						<label for="grains">Weight:</label> 
-						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" title="Please input numbers and decimal only" required />
+						<label for="grains">Projectile Weight:</label> 
+						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" aria-label="Input the weight of the projectile" title="Please input numbers and decimal only" required />
 					</dd>
 					<dd class="submit-row"> 
-						<button id="resetMe" type="button">Reset</button> <button type="submit" id="calculateMe">Calculate</button>
+						<button id="resetMe" aria-label="Reset the form." title="Reset form" type="button">Reset</button> <button type="submit" aria-label="Calculate the FPE" title="Calculate" id="calculateMe">Calculate</button>
 					</dd>
 					<dd>
 						<label for="fpe">Muzzle Energy:</label> 
-						<input type="numeral" value="" placeholder="foot pounds energy" id="fpe" name="fpe" />
+						<input type="numeral" value="" aria-label="Calculated Muzzle Energy" title="Muzzle Energy" placeholder="foot pounds energy" id="fpe" name="fpe" />
 					</dd>
 				</dl>
 			</form>
@@ -75,8 +75,8 @@
 		 // calculate the fpe on form submit either by clicking on submit button or hitting return
 		document.addEventListener('submit',function(e){
 			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
-			fps.value = fps.value + " feet per second";
- 			grains.value = grains.value + " grains";
+			//fps.value = fps.value + " feet per second";
+ 			//grains.value = grains.value + " grains";
 		}), false;
 	
 		// add active class, to set calculate button color on keydown / keyup for keyboard users. 
