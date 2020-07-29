@@ -22,11 +22,12 @@
 						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" aria-label="Input the weight of the projectile" title="Please input numbers and decimal only" required />
 					</dd>
 					<dd class="submit-row"> 
-						<button id="resetMe" aria-label="Reset the form." title="Reset form" type="button">Reset</button> <button type="submit" aria-label="Calculate the FPE" id="calculateMe">Calculate</button>
+						<button id="resetMe" aria-label="Reset the form." title="Reset form" type="button">Reset</button> 
+						<button type="submit" aria-label="Calculate the FPE" id="calculateMe">Calculate</button>
 					</dd>
 					<dd>
 						<label for="fpe">Muzzle Energy:</label> 
-						<input type="numeral" value="" aria-label="Calculated Muzzle Energy" title="Muzzle Energy" placeholder="foot pounds energy" id="fpe" name="fpe" />
+						<input type="numeral" value="" aria-label="Calculated Muzzle Energy" title="Muzzle Energy" placeholder="foot pounds energy" id="fpe" name="fpe" step="0.01" />
 					</dd>
 				</dl>
 			</form>
@@ -100,18 +101,18 @@
 		}
 		
 		window.onload = focusOnMe;
-		
+		// changed mind since folks should be able to input a number on both fields, and then change a value on either field. Requiring a reset is not user friendly. 
 		// disable the calculate button after submitting to prevent multiple calculations.
-		 var form = document.querySelector('form');
-			form.addEventListener('submit', function() {
-				calculateMe.setAttribute('disabled', 'disabled');
-			}, false);
+		//  var form = document.querySelector('form');
+// 			form.addEventListener('submit', function() {
+// 				calculateMe.setAttribute('disabled', 'disabled');
+// 			}, false);
 			
 			// on form reset enable calculateMe button
-			resetMe.addEventListener('click', function() {
-				fpeform.reset();
-				calculateMe.removeAttribute('disabled', 'disabled');
-			}, false);
+			// resetMe.addEventListener('click', function() {
+// 				fpeform.reset();
+// 				calculateMe.removeAttribute('disabled', 'disabled');
+// 			}, false);
 			
 			
 			// Firefox outlines form element(s) on submit. Fixme
