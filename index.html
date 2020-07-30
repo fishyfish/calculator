@@ -64,7 +64,6 @@
 		
 		// clear form fields when clicking in field
 		fps.addEventListener('click', function() {
-			//fpeform.reset();
 			this.value = '';
 		});
 		
@@ -76,8 +75,6 @@
 		 // calculate the fpe on form submit either by clicking on submit button or hitting return
 		document.addEventListener('submit',function(e){
 			fpe.value = Math.round(grains.value * fps.value * fps.value / 450240 * 100) / 100 + ' foot pounds energy';
-			//fps.value = fps.value + " feet per second";
- 			//grains.value = grains.value + " grains";
 		}), false;
 	
 		// add active class, to set calculate button color on keydown / keyup for keyboard users. 
@@ -101,22 +98,10 @@
 		}
 		
 		window.onload = focusOnMe;
-		// changed mind since folks should be able to input a number on both fields, and then change a value on either field. Requiring a reset is not user friendly. 
-		// disable the calculate button after submitting to prevent multiple calculations.
-		//  var form = document.querySelector('form');
-// 			form.addEventListener('submit', function() {
-// 				calculateMe.setAttribute('disabled', 'disabled');
-// 			}, false);
-			
-			//on form reset enable calculateMe button
 			 resetMe.addEventListener('click', function() {
     			fpeform.reset();
-				//calculateMe.removeAttribute('disabled', 'disabled');
 			}, false);
 			
-			
-			// Firefox outlines form element(s) on submit. Fixme
-			// probably due to form fields being numeral but I'm sticking in text. hmmmm. 
 	</script>
 
 </body>
