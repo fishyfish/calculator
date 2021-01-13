@@ -15,19 +15,19 @@
 					<dt>Airgun Energy Calculator</dt>
 					<dd>
 						<label for="fps">Velocity:</label> 
-						<input type="numeral" id="fps" name="fps" placeholder="feet per second" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" aria-label="Input the velocity" title="Please input numbers and decimal only" required  />
+						<input tabindex="1" type="numeral" id="fps" name="fps" placeholder="feet per second" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" aria-label="Input the velocity" title="Please input numbers and decimal only" required  />
 					</dd>
 					<dd>
 						<label for="grains">Projectile Weight:</label> 
-						<input type="numeral" id="grains" name="grains" placeholder="grains" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" aria-label="Input the weight of the projectile" title="Please input numbers and decimal only" required />
+						<input tabindex="2"  type="numeral" id="grains" name="grains" placeholder="grains" value="" pattern="[0-9]+([\.,][0-9]+)?" step="0.01" aria-label="Input the weight of the projectile" title="Please input numbers and decimal only" required />
 					</dd>
 					<dd class="submit-row"> 
-						<button id="resetMe" aria-label="Reset the form." title="Reset form" type="button">Reset</button> 
-						<button type="submit" aria-label="Calculate the FPE" id="calculateMe">Calculate</button>
+						<button tabindex="3"  id="resetMe" aria-label="Reset the form." title="Reset form" type="button">Reset</button> 
+						<button tabindex="4"  type="submit" aria-label="Calculate the FPE" id="calculateMe">Calculate</button>
 					</dd>
 					<dd>
 						<label for="fpe">Muzzle Energy:</label> 
-						<input type="numeral" value="" aria-label="Calculated Muzzle Energy" title="Muzzle Energy" placeholder="foot pounds energy" id="fpe" name="fpe" step="0.01" />
+						<input tabindex="5"  type="numeral" value="" aria-label="Calculated Muzzle Energy" title="Muzzle Energy" placeholder="foot pounds energy" id="fpe" name="fpe" step="0.01" />
 					</dd>
 				</dl>
 			</form>
@@ -106,3 +106,4 @@
 
 </body>
 </html>
+

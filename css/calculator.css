@@ -179,7 +179,8 @@ html {
     padding: 0 inherit;
   }
   #calculator #resetMe,
-  #calculator #calculateMe {
+  #calculator #calculateMe,
+  #calculator #calculateMeBC {
     font-size: 1.2rem;
     line-height: 1.2;
     padding: inherit 0;
